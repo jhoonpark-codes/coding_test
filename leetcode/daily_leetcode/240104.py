@@ -1,4 +1,4 @@
-'''
+'''py
 BEATS 95.15% in Runtime
 '''
 
