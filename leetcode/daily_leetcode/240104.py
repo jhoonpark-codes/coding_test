@@ -1,8 +1,4 @@
-```py
-from collections import Counter
-```
-
-'''py
+'''
 BEATS 95.15% in Runtime
 '''
 
