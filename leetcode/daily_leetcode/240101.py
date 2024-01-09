@@ -35,4 +35,42 @@ class Solution:
                 s.remove(min(tmp))
             
         
-        return ans
+        return and
+
+
+'''
+Best Solution 1
+class Solution(object):
+    def findContentChildren(self, g, s):
+        cookiesNums = len(s)
+        if cookiesNums == 0:
+            return 0
+        g.sort()
+        s.sort()
+
+        maxNum = 0
+        cookieIndex = cookiesNums - 1
+        childIndex = len(g) - 1
+        while cookieIndex >= 0 and childIndex >= 0:
+            if s[cookieIndex] >= g[childIndex]:
+                maxNum += 1
+                cookieIndex -= 1
+                childIndex -= 1
+            else:
+                childIndex -= 1
+
+        return maxNum
+'''
+
+'''
+Best Solution 2
+class Solution:
+    def findContentChildren(self, g: list[int], s: list[int]) -> int:
+        it = iter(sorted(s))
+        return sum(any(gi <= si for si in it) for gi in sorted(g))
+
+'''
+
+
+
+
