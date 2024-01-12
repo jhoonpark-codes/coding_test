@@ -1,4 +1,5 @@
 '''
+
 You are given a 0-indexed m x n binary matrix grid.
 
 A 0-indexed m x n difference matrix diff is created with the following procedure:
