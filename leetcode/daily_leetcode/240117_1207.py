@@ -43,6 +43,10 @@ class Solution:
 Best solutions
 1)
 
+## sort 해주면 같은 애들끼리 연속으로 들어오게 됨
+## 연속으로 같은 애들을 세서 v에 저장
+## sort(v)해서 앞뒤로만 비교해 주면 됨
+
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         arr.sort()
