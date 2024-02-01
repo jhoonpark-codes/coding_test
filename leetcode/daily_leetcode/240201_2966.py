@@ -39,17 +39,12 @@ class Solution:
         nums = sorted(nums)
         
         for i in range(0,len(nums), 3):
-            if not (nums[i+1] - nums[i] <= k) and (nums[i+2] - nums[i+1] <= k) :
+            if nums[i+2] - nums[i] > k :
                 return []
-            else :
-                split_points = [i for i in range(0, len(nums), 3)]
-                candidate = [nums[ind:ind + 3] for ind in split_points]
-                tmp = candidate[-1]
-                for j in range(0,2):
-                    if (tmp[j+1] - tmp[j] > k) or (tmp[j+2] - tmp[j+1] > k) :
-                        return []
-                    else:
-                        return candidate
+        else :
+            split_points = [i for i in range(0, len(nums), 3)]
+            return [nums[ind:ind + 3] for ind in split_points]
+            
 
                 
         
