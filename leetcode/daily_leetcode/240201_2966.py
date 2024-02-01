@@ -37,38 +37,20 @@ n is a multiple of 3.
 class Solution:
     def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
         nums = sorted(nums)
-        print('nums : ', nums)
         
-        diffs = list()
-        idxs  = [0]
-        for i in range(len(nums)-1):
-            diff = nums[i+1] - nums[i]
-            diffs.append(diff)
-            if diff > k:
-                if i - idxs[-1] < 3:
-                    return []
-                else:
-                    idxs.append(i)
-        
-        if len(idxs) == 1:
-            split_points = [i for i in range(0, len(nums), 3)]
-            return [nums[ind:ind + 3] for ind in split_points]
-        
-        if len(nums) - idxs[-1] < 3:
-            return []
-        
-        idxs.append(len(nums)-1)
-        
-        print('diffs : ', diffs)
-        print('idxs  : ', idxs)
-        candidate = [nums[idxs[j] : idxs[j+1]] for j in range(len(idxs)-1)]
-        print('candidate : ', candidate)
-        
-        candidate_len = [len(tmp) for tmp in candidate]
+        for i in range(0,len(nums), 3):
+            if not (nums[i+1] - nums[i] <= k) and (nums[i+2] - nums[i+1] <= k) :
+                return []
+            else :
+                split_points = [i for i in range(0, len(nums), 3)]
+                candidate = [nums[ind:ind + 3] for ind in split_points]
+                tmp = candidate[-1]
+                for j in range(0,2):
+                    if (tmp[j+1] - tmp[j] > k) or (tmp[j+2] - tmp[j+1] > k) :
+                        return []
+                    else:
+                        return candidate
 
-        if (1 in candidate_len) or (2 in candidate_len):
-            return []
-        else:
-            return candidate
                 
         
+
