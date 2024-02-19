@@ -18,3 +18,22 @@ class Solution:
                 else:
                     n = n//2
         return True
+
+
+'''
+Solution 1 -> make all possible answer using loop
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        for i in range(31):
+            ans = 2 ** i
+            if ans == n:
+                return True
+        return Fals
+
+'''
+
+'''
+BEST!
+return n > 0 and (n & (n - 1)) == 0
+
+'''
