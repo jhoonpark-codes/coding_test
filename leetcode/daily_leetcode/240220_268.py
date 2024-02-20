@@ -31,3 +31,28 @@ class Solution:
                 return tmp
         else:
             return max(nums) + 1
+
+
+## best solution
+'''
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        total_sum = n * (n + 1) // 2
+        array_sum = sum(nums)
+        return total_sum - array_sum
+'''
+
+'''
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        total_sum = n * (n + 1) // 2
+        array_sum = sum(nums)
+        return total_sum - array_sum
+'''
+
+
+
+
+
